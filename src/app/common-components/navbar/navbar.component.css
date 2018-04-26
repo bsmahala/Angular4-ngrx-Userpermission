@@ -1,0 +1,48 @@
+.menu_text {
+    font-weight: bold;
+}
+
+.menu_list {
+    list-style: none;
+    padding: 15px;
+}
+
+.collapse_menu .menu_text {
+    display: none;
+}
+
+.menu_text {
+    color: #696969 !important;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.menu_list li a:hover {
+    color: #176f98 !important
+}
+
+.collapse_icon {
+    border-bottom: 2px solid #e3e7e7;
+    height: 68px;
+    padding: 15px;
+    background: #176f98
+}
+
+.collapse_icon i {
+    font-size: 20px;
+    color: #fff
+}
+
+.menu_list li {
+    border-bottom: 1px dotted #ededed;
+    padding: 10px 0
+}
+
+.menu_list li a {
+    padding: 25px 0;
+    width: 100%;
+}
+
+.fa {
+    font-size: 17px;
+}

@@ -1,0 +1,32 @@
+<div class="menu_container">
+    <div class="collapse_icon">
+        <a (click)="toggleMenu()">
+            <i class="glyphicon glyphicon-align-justify"></i>
+        </a>
+    </div>
+    <div>
+        <ul class="menu_list">
+            <li class="menu">
+                <a href="javascript:void(0)">
+                    <i class="glyphicon glyphicon-home">
+                        <span class="menu_text">
+                            User Management
+                        </span>
+                    </i>
+                </a>
+                <ul class="menu_list">
+                    <li *ngFor="let usermenu of usermanagementMenu" class="menu" routerLink="/usermanagement/{{usermenu.path}}">
+                        <a href="javascript:void(0)">
+                            <i class="{{usermenu.icon}}">
+                                <span class="menu_text">
+                                    {{usermenu.label}}
+                                </span>
+                            </i>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</div>

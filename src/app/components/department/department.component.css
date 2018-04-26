@@ -1,0 +1,20 @@
+.form-sec{
+
+	background: #fff;
+    box-shadow: 0px 0px 1px #ccc;
+}
+
+.form-sec form{
+	padding: 15px;
+	
+}
+.dep-list{
+background: #fff;
+    box-shadow: 0px 0px 1px #ccc;
+    padding: 15px;
+    margin-top: 20px;
+
+}
+.dep-list table{ margin-bottom: 0 !Important;}
+
+.form-sec{ margin-right:15px; }

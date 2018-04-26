@@ -1,0 +1,78 @@
+<div class="container">
+    <form [formGroup]="teamForm">
+        <fieldset>
+            <div class="form-group" [ngClass]="{'has-error' : ((teamForm.get('name').touched || formSubmitted) && !teamForm.get('name').valid)}">
+                <label for="name" class="control-label">Team Name</label>
+                <input class="form-control" type="text" formControlName="name" id="name" autofocus>
+                <span class="help-block" *ngIf="((teamForm.get('name').touched || formSubmitted) && !teamForm.get('name').valid)">
+                  <span *ngIf="teamForm.get('name').errors.required">
+                    Please enter department name
+                  </span>
+                </span>
+            </div>
+
+            <div class="form-group" [ngClass]="{'has-error' : ((teamForm.get('members').touched || formSubmitted) && !teamForm.get('members').valid)}">
+                <label for="name" class="control-label">Team Name</label>
+                <select class="form-control" formControlName="members" name="teammember" multiple="true">
+                  <option value="0" disabled>Select Team Member</option>
+                  <option value="1" >Robin</option>
+                  <option value="2" >Ayush</option>
+                  <option value="3" >Shilpa</option>
+                </select>
+                <span class="help-block" *ngIf="((teamForm.get('members').touched || formSubmitted) && !teamForm.get('members').valid)">
+                  <span *ngIf="teamForm.get('members').errors.required">
+                    Please select team member
+                  </span>
+                </span>
+            </div>
+
+
+
+            <div class="form-group">
+                <button class="btn btn-primary" (click)="formSubmitted=true;saveDepartment()">Save</button>
+                <button class="btn btn-secondary" (click)="teamForm.reset(); formSubmitted=false;">Cancel</button>
+            </div>
+        </fieldset>
+    </form>
+
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>
+                    Team Name
+                </th>
+
+                <th>
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Angular1</td>
+
+                <td>
+
+                    <button class="btn btn-info">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                    </button>
+
+                </td>
+            </tr>
+            <tr>
+                <td>Angular2</td>
+
+                <td>
+
+                    <button class="btn btn-info">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                    </button>
+
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</div>

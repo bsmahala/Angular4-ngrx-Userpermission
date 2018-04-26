@@ -1,0 +1,5 @@
+<span [class]="className" *ngIf="formControl && formControl.invalid && formControl.touched">
+    <div *ngFor="let ek of erroreKey;let  i= index">
+            {{start(i, formControl.errors[ek], ek) }}
+    </div>
+</span>

@@ -1,0 +1,39 @@
+.nav_bar {
+    float: left;
+    width: 200px;
+    height: 100vh;
+    background: #fff;
+}
+
+.main_content {
+    overflow: hidden;
+    height: 100vh;
+    background: #f6f6f6;
+}
+
+.custom_container {
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.collapse_menu {
+    width: 68px;
+}
+
+.header_holder {
+    height: 70px;
+    border-bottom: 2px solid #e3e7e7;
+    background: #176f98
+}
+
+.main_holder {
+    height: calc(100vh - 110px);
+    overflow: auto;
+}
+
+.footer {
+    height: 40px;
+    border-top: 2px solid #e3e7e7;
+}

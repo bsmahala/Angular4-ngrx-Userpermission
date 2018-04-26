@@ -1,0 +1,50 @@
+<div class="container">
+    <form [formGroup]="roleForm" (allcadReactiveFormSubmit)="addPage($event)">
+        Add Role Type
+        <hr />
+        <fieldset>
+
+            <div class="form-group">
+                <label for="name" class="control-label">Name</label>
+                <input class="form-control" type="text" formControlName="name" autofocus>
+                <allcad-formerror-handler [formGroup]="roleForm" field="name"></allcad-formerror-handler>
+            </div>
+            <div class="form-group">
+                <label for="name" class="control-label">Description</label>
+                <input class="form-control" type="text" formControlName="description" autofocus>
+                <allcad-formerror-handler [formGroup]="roleForm" field="description"></allcad-formerror-handler>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Save Page</button>
+            </div>
+        </fieldset>
+    </form>
+    <hr /><b><u>Role List :-</u></b>
+    <hr />
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let api of roleList">
+                <td>{{api.name}}</td>
+                <td>{{api.description}}</td>
+                <td>
+                    <button class="btn btn-info">
+                      <i class="fa fa-pencil"></i>
+              </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

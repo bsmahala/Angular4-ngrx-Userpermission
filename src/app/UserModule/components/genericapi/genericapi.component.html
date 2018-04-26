@@ -1,0 +1,99 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <form [formGroup]="genericApiForm" (allcadReactiveFormSubmit)="addGenericApi($event)">
+                Add New Page Type
+                <hr />
+                <fieldset>
+
+                    <div class="form-group">
+                        <label for="name" class="control-label">Endpoint</label>
+                        <input class="form-control" type="text" formControlName="endpoint" autofocus>
+                        <span class="help-block">{{apiUrl}}</span>
+                        <allcad-formerror-handler [formGroup]="genericApiForm" field="endpoint"></allcad-formerror-handler>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="control-label">Sql Query</label>
+                        <input class="form-control" type="text" formControlName="sql" autofocus>
+                        <span class="help-block">{{hint}}</span>
+                        <allcad-formerror-handler [formGroup]="genericApiForm" field="sql"></allcad-formerror-handler>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="control-label">Method</label>
+                        <br/>
+                        <label class="checkbox-inline"><input type="radio" formControlName="method" value="get">GET</label>
+                        <label class="checkbox-inline"><input type="radio" formControlName="method" value="post">POST</label>
+                        <label class="checkbox-inline"><input type="radio" formControlName="method" value="put">PUT</label>
+                        <allcad-formerror-handler [formGroup]="genericApiForm" field="method"></allcad-formerror-handler>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" class="control-label">Description</label>
+                        <input class="form-control" type="text" formControlName="description" autofocus>
+                        <allcad-formerror-handler [formGroup]="genericApiForm" field="description"></allcad-formerror-handler>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Save Page</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-sm-4">
+            <div>
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>
+                                Param
+                            </th>
+                            <th>
+                                Required
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let param of params">
+                            <td>{{param.name}}</td>
+                            <td><input type="checkbox" [checked]="param.required" (change)="params.required = !param.required" /> </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <hr /><b><u>GenericApi List :-</u></b>
+    <hr /> Root Uri: {{rootR}}
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>
+                    Endpoint
+                </th>
+                <th>
+                    Method
+                </th>
+                <th>
+                    Sql Query
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let api of genList">
+                <td>{{api}}</td>
+                <td>{{genapiListObect[api].method}}</td>
+                <td>{{genapiListObect[api].sql}}</td>
+                <td>{{genapiListObect[api].description}}</td>
+                <td>
+                    <button class="btn btn-info">
+                    <i class="fa fa-pencil"></i>
+            </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

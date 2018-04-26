@@ -1,0 +1,52 @@
+<div class="row">
+    <div [class]="roleshow?'col-sm-7 animation':'col-sm-12 animation'">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th width="120">
+                        <sub>Pages</sub> \ <sup>PageType</sup>
+                    </th>
+                    <th *ngFor="let pt of pagetypeList">
+                        {{pt.name}}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let page of pageList">
+                    <td>{{page.name}}</td>
+                    <td *ngFor="let pt of pagetypeList">
+                        <a href="javascript:void(0)" class="red" (click)="avilableRole(true, page, pt)"><b> {{getRoleArray(page.id, pt.id).length}} </b></a> linked <br/> <a class="green" href="javascript:void(0)" (click)="avilableRole(true, page, pt)"><b> {{roleList.length - getRoleArray(page.id, pt.id).length}} </b></a>                        unlinked
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [class]="roleshow?'col-sm-5 sidebackgorund':'col-sm-5 sidebackgorund disnone'">
+        <a href="javascript:void(0)" (click)="avilableRole(false)">close</a>
+        <div>Page : <b>{{selectPageNtype.page.name}}</b></div>
+        <div>PageType : <b>{{selectPageNtype.type.name}}</b></div>
+        <button class="btn btn-primary" [disabled]="saveDisabled()" (click)="saveRoleChange(selectPageNtype.page.id, selectPageNtype.type.id)"> Save Api Change</button>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Linked Action
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let api of roleList">
+                    <td>{{api.name}}</td>
+                    <td>{{api.description}}</td>
+                    <td><input type="checkbox" (change)="updateLink($event, api)" [checked]="getRoleArray(selectPageNtype.page.id, selectPageNtype.type.id).indexOf(api.id)>=0" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

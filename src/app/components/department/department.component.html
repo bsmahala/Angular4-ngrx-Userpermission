@@ -1,0 +1,146 @@
+<div class="container">
+    <h2>Department Name</h2>
+    <br>
+    <div class="row">
+        <div class="col-sm-12 form-sec">
+            <form [formGroup]="departmentForm">
+                <fieldset>
+                    <from-field [options]="{ label:'Department Name',  field: 'name', msg: 'Please enter department name'}" [parentGroup]="departmentForm"></from-field>
+                    <from-field [options]="{ type: 'number', label:'Department Order',  field: 'order', msg: 'Please enter department order'}" [parentGroup]="departmentForm"></from-field>
+                    <from-field [options]="{ type: 'color', label:'Department Color',  field: 'color', msg: 'Please enter color'}" [parentGroup]="departmentForm"></from-field>
+                    <div class="form-group">
+                        <button class="btn btn-primary" (click)="saveDepartment()">Save</button>
+                        <button class="btn btn-secondary" (click)="departmentForm.reset();formSubmitted=false;">Cancel</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+
+        <div class="col-sm-12 dep-list">
+
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>
+                            Department Name
+                        </th>
+
+                        <th>
+                            Show Order
+                        </th>
+
+                        <th>
+                            Color
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Developer</td>
+
+                        <td>Developer</td>
+                        <td>Developer</td>
+                        <td>Developer</td>
+
+
+                        <td>
+
+                            <button class="btn btn-info">
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </button>
+                            <button class="btn btn-danger">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                    </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Developer</td>
+
+                        <td>Developer</td>
+                        <td>Developer</td>
+                        <td>Developer</td>
+
+
+                        <td>
+
+                            <button class="btn btn-info">
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </button>
+                            <button class="btn btn-danger">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                    </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Developer</td>
+
+                        <td>Developer</td>
+                        <td>Developer</td>
+                        <td>Developer</td>
+
+
+                        <td>
+
+                            <button class="btn btn-info">
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </button>
+                            <button class="btn btn-danger">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                    </button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Developer</td>
+
+                        <td>Developer</td>
+                        <td>Developer</td>
+                        <td>Developer</td>
+
+
+                        <td>
+
+                            <button class="btn btn-info">
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </button>
+                            <button class="btn btn-danger">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                    </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Developer</td>
+
+                        <td>Developer</td>
+                        <td>Developer</td>
+                        <td>Developer</td>
+
+
+                        <td>
+
+                            <button class="btn btn-info">
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                    </button>
+                            <button class="btn btn-danger">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                    </button>
+                        </td>
+                    </tr>
+
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+<div class="container">
+    <form [formGroup]="apiForm" (allcadReactiveFormSubmit)="addApi($event)">
+        Add New Api
+        <hr />
+        <fieldset>
+
+            <div class="form-group">
+                <label for="name" class="control-label">Uri</label>
+                <input class="form-control" type="text" formControlName="uri" autofocus>
+                <allcad-formerror-handler [formGroup]="apiForm" field="uri"></allcad-formerror-handler>
+            </div>
+            <div class="form-group">
+                <label for="name" class="control-label">Description</label>
+                <input class="form-control" type="text" formControlName="description" autofocus>
+                <allcad-formerror-handler [formGroup]="apiForm" field="description"></allcad-formerror-handler>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Save Api</button>
+            </div>
+        </fieldset>
+    </form>
+    <hr /><b><u>API'S List :-</u></b>
+    <hr />
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>
+                    Uri
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let api of apiList">
+                <td>{{api.uri}}</td>
+                <td>{{api.description}}</td>
+                <td>
+                    <button class="btn btn-info">
+                          <i class="fa fa-pencil"></i>
+                  </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

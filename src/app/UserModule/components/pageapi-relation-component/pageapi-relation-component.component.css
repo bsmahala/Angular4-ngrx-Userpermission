@@ -1,0 +1,25 @@
+.animation {
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.sidebackgorund {
+    border-left: 1px solid red;
+    display: table-cell;
+    height: 100%;
+}
+
+.disnone {
+    display: none;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}

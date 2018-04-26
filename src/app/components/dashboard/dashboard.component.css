@@ -1,0 +1,11 @@
+.block {
+    height: 150px;
+    width: 250px;
+    background: rgb(236, 96, 96);
+    margin: 0px 10px;
+}
+
+.block:hover {
+    box-shadow: 0 0 20px #222523;
+    opacity: .8;
+}

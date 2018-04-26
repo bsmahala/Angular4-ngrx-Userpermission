@@ -1,0 +1,189 @@
+<div class="container">
+    <form [formGroup]="userForm">
+        <fieldset>
+
+
+            <div class="form-group" [ngClass]="{'has-error' : ((userForm.get('employeId').touched || formSubmitted) && !userForm.get('employeId').valid)}">
+                <label for="name" class="control-label">Employe Id</label>
+                <input class="form-control" type="text" formControlName="employeId" id="employeId" autofocus>
+                <span class="help-block" *ngIf="((userForm.get('employeId').touched || formSubmitted) && !userForm.get('employeId').valid)">
+                          <span *ngIf="userForm.get('employeId').errors.required">
+                            Please enter user employeId
+                          </span>
+                </span>
+            </div>
+            <div class="form-group" [ngClass]="{'has-error' : ((userForm.get('name').touched || formSubmitted) && !userForm.get('name').valid)}">
+                <label for="name" class="control-label">Name</label>
+                <input class="form-control" type="text" formControlName="name" id="name" autofocus>
+                <span class="help-block" *ngIf="((userForm.get('name').touched || formSubmitted) && !userForm.get('name').valid)">
+                  <span *ngIf="userForm.get('name').errors.required">
+                    Please enter user  name
+                  </span>
+                </span>
+            </div>
+            <div class="form-group" [ngClass]="{'has-error' : ((userForm.get('fatherName').touched || formSubmitted) && !userForm.get('fatherName').valid)}">
+                <label for="name" class="control-label">Father Name</label>
+                <input class="form-control" type="text" formControlName="fatherName" id="fatherName" autofocus>
+                <span class="help-block" *ngIf="((userForm.get('fatherName').touched || formSubmitted) && !userForm.get('fatherName').valid)">
+                  <span *ngIf="userForm.get('fatherName').errors.required">
+                    Please enter father name
+                  </span>
+                </span>
+            </div>
+
+            <div class="form-group" [ngClass]="{'has-error' : ((userForm.get('email').touched || formSubmitted) && !userForm.get('email').valid)}">
+                <label for="name" class="control-label">Email</label>
+                <input class="form-control" type="text" formControlName="email" id="email" autofocus>
+                <span class="help-block" *ngIf="((userForm.get('email').touched || formSubmitted) && !userForm.get('email').valid)">
+                  <span *ngIf="userForm.get('email').errors.required">
+                    Please enter user email
+                  </span>
+                </span>
+            </div>
+
+
+            <div class="form-group" [ngClass]="{'has-error' : ((userForm.get('phone').touched || formSubmitted) && !userForm.get('phone').valid)}">
+                <label for="name" class="control-label">Phone</label>
+                <input class="form-control" type="text" formControlName="phone" id="phone" autofocus>
+                <span class="help-block" *ngIf="((userForm.get('phone').touched || formSubmitted) && !userForm.get('phone').valid)">
+                  <span *ngIf="userForm.get('phone').errors.required">
+                    Please enter user phone
+                  </span>
+                </span>
+            </div>
+
+
+            <div class="form-group" [ngClass]="{'has-error' : ((userForm.get('userName').touched || formSubmitted) && !userForm.get('userName').valid)}">
+                <label for="name" class="control-label">User Name</label>
+                <input class="form-control" type="text" formControlName="userName" id="userName" autofocus>
+                <span class="help-block" *ngIf="((userForm.get('userName').touched || formSubmitted) && !userForm.get('userName').valid)">
+                      <span *ngIf="userForm.get('userName').errors.required">
+                        Please enter user name
+                      </span>
+                </span>
+            </div>
+
+
+            <div class="form-group" [ngClass]="{'has-error' : ((userForm.get('password').touched || formSubmitted) && !userForm.get('password').valid)}">
+                <label for="name" class="control-label">Password</label>
+                <input class="form-control" type="text" formControlName="password" id="password" autofocus>
+                <span class="help-block" *ngIf="((userForm.get('password').touched || formSubmitted) && !userForm.get('password').valid)">
+                          <span *ngIf="userForm.get('password').errors.required">
+                            Please enter password
+                          </span>
+                </span>
+            </div>
+
+            <div class="form-group" [ngClass]="{'has-error' : ((userForm.get('confirmPassword').touched || formSubmitted) && !userForm.get('confirmPassword').valid)}">
+                <label for="name" class="control-label">Confirm  password</label>
+                <input class="form-control" type="text" formControlName="confirmPassword" id="confirmPassword" autofocus>
+                <span class="help-block" *ngIf="((userForm.get('confirmPassword').touched || formSubmitted) && !userForm.get('confirmPassword').valid)">
+                              <span *ngIf="userForm.get('confirmPassword').errors.required">
+                                Please enter confirm password
+                              </span>
+                </span>
+            </div>
+
+
+
+
+
+
+            <div class="form-group" [ngClass]="{'has-error' : ((userForm.get('team').touched || formSubmitted) && !userForm.get('team').valid)}">
+                <label for="name" class="control-label">Team Name</label>
+                <select class="form-control" formControlName="team" name="team">
+                  <option value="0" disabled>Select Team</option>
+                  <option value="1" >Angular1</option>
+                  <option value="2" >Angular2</option>
+                  
+                </select>
+                <span class="help-block" *ngIf="((userForm.get('team').touched || formSubmitted) && !userForm.get('team').valid)">
+                  <span *ngIf="userForm.get('team').errors.required">
+                    Please select team 
+                  </span>
+                </span>
+            </div>
+
+
+
+            <div class="form-group" [ngClass]="{'has-error' : ((userForm.get('designation').touched || formSubmitted) && !userForm.get('designation').valid)}">
+                <label for="name" class="control-label">Designation</label>
+                <select class="form-control" formControlName="designation" name="designation">
+                  <option value="0" disabled>Select designation</option>
+                  <option value="1" >TL</option>
+                  <option value="2" >Admin</option>
+                  
+                </select>
+                <span class="help-block" *ngIf="((userForm.get('designation').touched || formSubmitted) && !userForm.get('designation').valid)">
+                  <span *ngIf="userForm.get('designation').errors.required">
+                    Please select designation 
+                  </span>
+                </span>
+            </div>
+
+
+            <div class="form-group" [ngClass]="{'has-error' : ((userForm.get('department').touched || formSubmitted) && !userForm.get('department').valid)}">
+                <label for="name" class="control-label">Department</label>
+                <select class="form-control" formControlName="department" name="department">
+                      <option value="0" disabled>Select department</option>
+                      <option value="1" >Account</option>
+                      <option value="2" >Admin</option>
+                      
+                    </select>
+                <span class="help-block" *ngIf="((userForm.get('department').touched || formSubmitted) && !userForm.get('department').valid)">
+                      <span *ngIf="userForm.get('department').errors.required">
+                        Please select department 
+                      </span>
+                </span>
+            </div>
+
+
+
+            <div class="form-group">
+                <button class="btn btn-primary" (click)="formSubmitted=true;saveDepartment()">Save</button>
+                <button class="btn btn-secondary" (click)="userForm.reset(); formSubmitted=false;">Cancel</button>
+            </div>
+        </fieldset>
+    </form>
+
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>
+                    Team Name
+                </th>
+
+                <th>
+                    Action
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Angular1</td>
+
+                <td>
+
+                    <button class="btn btn-info">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                    </button>
+
+                </td>
+            </tr>
+            <tr>
+                <td>Angular2</td>
+
+                <td>
+
+                    <button class="btn btn-info">
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                    </button>
+
+                </td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</div>

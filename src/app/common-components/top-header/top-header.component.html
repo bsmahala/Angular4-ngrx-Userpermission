@@ -1,0 +1,44 @@
+<div>
+
+    <div class="user_detail pd_8" (click)="toggleUserPopup()">
+        <div class="pd_top_8 over_hide">
+            <div class="flt_left">
+                <img src="./assets/images/avtar.png" alt="" class="user_profile flt_left">
+            </div>
+            <div class="flt_right">
+                <span class="user_name">Emma Watson</span>
+                <a href="javascript:void(0)">
+                    <span>
+                          Settings
+                        </span>
+                    <i class="glyphicon glyphicon-wrench"></i>
+                </a>
+            </div>
+
+
+        </div>
+        <div class="user_popup">
+            <ul>
+                <li>
+                    <div>
+                        <div class="user_profile">
+                            <img src="./assets/images/avtar.png" alt="" class="max_wd_100">
+                        </div>
+                        <div class="text_center">
+                            <span class="fnt_bold">Emma Watson</span>
+                        </div>
+                    </div>
+                </li>
+                <li class="link">
+                    <a href="javascript:void(0)">Profile</a>
+                </li>
+                <li class="link">
+                    <a href="javascript:void(0)">Account</a>
+                </li>
+                <li class="link">
+                    <a href="javascript:void(0)" (click)="logout()">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

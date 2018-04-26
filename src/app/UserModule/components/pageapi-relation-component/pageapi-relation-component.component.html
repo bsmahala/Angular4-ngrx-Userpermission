@@ -1,0 +1,52 @@
+<div class="row">
+    <div [class]="apishow?'col-sm-7 animation':'col-sm-12 animation'">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th width="120">
+                        <sub>Pages</sub> \ <sup>PageType</sup>
+                    </th>
+                    <th *ngFor="let pt of pagetypeList">
+                        {{pt.name}}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let page of pageList">
+                    <td>{{page.name}}</td>
+                    <td *ngFor="let pt of pagetypeList">
+                        <a href="javascript:void(0)" class="red" (click)="avilableApi(true, page, pt)"><b> {{getApiArray(page.id, pt.id).length}} </b></a> linked <br/> <a class="green" href="javascript:void(0)" (click)="avilableApi(true, page, pt)"><b> {{apiList.length - getApiArray(page.id, pt.id).length}} </b></a>                        unlinked
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [class]="apishow?'col-sm-5 sidebackgorund':'col-sm-5 sidebackgorund disnone'">
+        <a href="javascript:void(0)" (click)="avilableApi(false)">close</a>
+        <div>Page : <b>{{selectPageNtype.page.name}}</b></div>
+        <div>PageType : <b>{{selectPageNtype.type.name}}</b></div>
+        <button class="btn btn-primary" [disabled]="saveDisabled()" (click)="saveApiChange(selectPageNtype.page.id, selectPageNtype.type.id)"> Save Api Change</button>
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        Uri
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Linked Action
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let api of apiList">
+                    <td>{{api.uri}}</td>
+                    <td>{{api.description}}</td>
+                    <td><input type="checkbox" (change)="updateLink($event, api)" [checked]="getApiArray(selectPageNtype.page.id, selectPageNtype.type.id).indexOf(api.id)>=0" /></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
